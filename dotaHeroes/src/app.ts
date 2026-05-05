@@ -20,7 +20,7 @@ app.get("/health", (req, res) => {
 app.use(cors());
 app.use(express.json());
 
-app.use("/api/heroes", heroRouter);
+app.use("/api/heroesя", heroRouter);
 
 app.use(errorHandler);
 
