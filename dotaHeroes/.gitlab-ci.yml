@@ -7,22 +7,23 @@ stages:
 cache:
   key:
     files:
-      - package-lock.json
+      - dotaHeroes/package-lock.json
   paths:
-    - node_modules/
+    - dotaHeroes/node_modules/
 
 build_job:
   stage: build
   script:
+    - cd dotaHeroes
     - npm ci
     - npm run build
   artifacts:
     paths:
-      - dist/
-    expire_in: 1 hour
+      - dotaHeroes/dist/
 
 test_job:
   stage: test
   script:
+    - cd dotaHeroes
     - npm ci
     - npm run test
