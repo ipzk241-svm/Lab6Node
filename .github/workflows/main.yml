@@ -2,7 +2,7 @@ name: Node.js CI/CD to Fly.io
 
 on:
   push:
-    branches: ["main"]
+    branches: ["main", "lab7"]
 
 jobs:
   build-and-test:
