@@ -8,6 +8,7 @@ import {
   afterAll,
   afterEach,
 } from "@jest/globals";
+import mongoose from "mongoose";
 
 beforeAll(async () => await connectTestDB());
 afterEach(async () => await clearTestDB());
@@ -19,6 +20,7 @@ describe("Hero Model Unit Tests", () => {
     primaryAttribute: "Strength",
     attackType: "Melee",
     roles: ["Initiator", "Durable"],
+    ownerId: new mongoose.Types.ObjectId(),
   };
 
   it("should create a hero with default values and timestamps", async () => {

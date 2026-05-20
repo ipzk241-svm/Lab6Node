@@ -10,6 +10,7 @@ export interface IHero extends Document {
   roles: string[];
   createdAt: Date;
   updatedAt: Date;
+  ownerId: mongoose.Types.ObjectId;
 
   readonly powerProfile: string;
 }
@@ -58,6 +59,11 @@ const heroSchema = new Schema<IHero>(
         },
         message: "Герой повинен мати хоча б одну роль",
       },
+    },
+    ownerId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
     },
   },
   {
